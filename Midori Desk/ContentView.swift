@@ -8,17 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var currentWeek = 5
+    @State private var courses: [Course] = [
+        Course(name: "Algorithms", totalWeeks: 14),
+        Course(name: "Operating Systems", totalWeeks: 12)
+    ]
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationSplitView {
+            MenuSidebarView()
+        } detail: {
+            
         }
-        .padding()
+        VStack(){
+            
+            
+        }
     }
 }
 
-#Preview {
-    ContentView()
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
 }
